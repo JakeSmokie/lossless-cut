@@ -82,6 +82,8 @@ const defaultKeyBindings: KeyBinding[] = [
   { keys: 'f', action: 'toggleFullscreenVideo' },
 
   { keys: 'enter', action: 'labelCurrentSegment' },
+  { keys: '1', action: 'labelCurrentSegment_set1' },
+  { keys: '2', action: 'labelCurrentSegment_set2' },
 
   { keys: 'e', action: 'export' },
   { keys: 'shift+/', action: 'toggleKeyboardShortcuts' },

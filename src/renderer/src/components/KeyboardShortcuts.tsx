@@ -351,6 +351,14 @@ const KeyboardShortcuts = memo(({
         name: t('Label current segment'),
         category: segmentsAndCutpointsCategory,
       },
+      labelCurrentSegment_set1: {
+        name: t('Label current segment (set 1)'),
+        category: segmentsAndCutpointsCategory,
+      },
+      labelCurrentSegment_set2: {
+        name: t('Label current segment (set 2)'),
+        category: segmentsAndCutpointsCategory,
+      },
       editCurrentSegmentTags: {
         name: t('Edit current segment tags'),
         category: segmentsAndCutpointsCategory,

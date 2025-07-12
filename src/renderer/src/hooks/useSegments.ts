@@ -534,12 +534,18 @@ function useSegments({ filePath, workingRef, setWorking, setProgress, videoStrea
     }
   }, [checkFileOpened, getRelevantTime, setCutTime]);
 
-  const labelSegment = useCallback(async (index: number) => {
+  const labelSegment = useCallback(async (index: number, text: string | undefined) => {
     const seg = cutSegments[index];
     if (seg == null) return;
     const { name } = seg;
-    const value = await labelSegmentDialog({ currentName: name, maxLength: maxLabelLength });
-    if (value != null) updateSegAtIndex(index, { name: value });
+
+    if (text == null) {
+      const value = await labelSegmentDialog({ currentName: name, maxLength: maxLabelLength });
+      if (value != null) updateSegAtIndex(index, { name: value });
+    } else {
+      updateSegAtIndex(index, { name: text })
+    }
+
   }, [cutSegments, updateSegAtIndex, maxLabelLength]);
 
   const selectSegments = useCallback((segmentsToSelect: { segId: string }[]) => {

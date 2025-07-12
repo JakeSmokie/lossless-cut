@@ -61,6 +61,8 @@ export type KeyboardAction =
   | 'copySegmentsToClipboard'
   | 'toggleFullscreenVideo'
   | 'labelCurrentSegment'
+  | 'labelCurrentSegment_set1'
+  | 'labelCurrentSegment_set2'
   | 'export'
   | 'toggleKeyboardShortcuts'
   | 'closeActiveScreen'
