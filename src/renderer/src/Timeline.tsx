@@ -364,18 +364,6 @@ function Timeline({
         onScroll={onTimelineScroll}
         ref={timelineScrollerRef}
       >
-        {waveformEnabled && shouldShowWaveform && (waveforms.length > 0 || overviewWaveform != null) && (
-          <Waveforms
-            calculateTimelinePercent={calculateTimelinePercent}
-            fileDurationNonZero={fileDurationNonZero}
-            waveforms={waveforms}
-            overviewWaveform={overviewWaveform}
-            zoom={zoom}
-            darkMode={darkMode}
-            height={waveformHeight}
-          />
-        )}
-
         {showThumbnails && (
           <div style={{ height: 60, width: `${zoom * 100}%`, position: 'relative', marginBottom: 3 }}>
             {thumbnails.map((thumbnail, i) => {
@@ -388,6 +376,18 @@ function Timeline({
               );
             })}
           </div>
+        )}
+
+        {waveformEnabled && shouldShowWaveform && (waveforms.length > 0 || overviewWaveform != null) && (
+          <Waveforms
+            calculateTimelinePercent={calculateTimelinePercent}
+            fileDurationNonZero={fileDurationNonZero}
+            waveforms={waveforms}
+            overviewWaveform={overviewWaveform}
+            zoom={zoom}
+            darkMode={darkMode}
+            height={waveformHeight}
+          />
         )}
 
         <div

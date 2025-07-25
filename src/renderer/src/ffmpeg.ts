@@ -436,14 +436,14 @@ export async function renderThumbnails({ filePath, from, duration, onThumbnail, 
   onThumbnail: (a: { time: number, url: string }) => void,
   signal: AbortSignal,
 }) {
-  const numThumbs = 10;
+  const numThumbs = 30;
   const thumbTimes = Array.from({ length: numThumbs }).fill(undefined).map((_unused, i) => (from + ((duration * i) / numThumbs)));
   // console.log(thumbTimes);
 
   await pMap(thumbTimes, async (time) => {
     const url = await renderThumbnail(filePath, time, signal);
     onThumbnail({ time, url });
-  }, { concurrency: 2 });
+  }, { concurrency: 4 });
 }
 
 export async function extractWaveform({ filePath, outPath }: { filePath: string, outPath: string }) {

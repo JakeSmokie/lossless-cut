@@ -63,6 +63,8 @@ export type KeyboardAction =
   | 'labelCurrentSegment'
   | 'labelCurrentSegment_set1'
   | 'labelCurrentSegment_set2'
+  | 'labelCurrentSegment_set3'
+  | 'labelCurrentSegment_set4'
   | 'export'
   | 'toggleKeyboardShortcuts'
   | 'closeActiveScreen'

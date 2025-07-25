@@ -10,8 +10,8 @@ import { FormatTimecode, StateSegment } from './types';
 
 
 function Marker({
-  seg, segNum, color, isActive, selected, onClick, getTimePercent, formatTimecode,
-}: {
+                  seg, segNum, color, isActive, selected, onClick, getTimePercent, formatTimecode,
+                }: {
   seg: StateSegment,
   segNum: number,
   color: Color,
@@ -70,8 +70,8 @@ function Marker({
 }
 
 function TimelineSeg({
-  seg, fileDurationNonZero, isActive, segNum, onSegClick, invertCutSegments, formatTimecode, selected,
-} : {
+                       seg, fileDurationNonZero, isActive, segNum, onSegClick, invertCutSegments, formatTimecode, selected,
+                     }: {
   seg: StateSegment,
   fileDurationNonZero: number,
   isActive: boolean,
@@ -82,9 +82,26 @@ function TimelineSeg({
   selected: boolean,
 }) {
   const { darkMode } = useUserSettings();
-  const { getSegColor } = useSegColors();
 
-  const segColor = useMemo(() => getSegColor(seg), [getSegColor, seg]);
+  const segColor = useMemo((): Color => {
+    if (seg.name?.startsWith('1')) {
+      return Color('#e5e5ff');
+    }
+
+    if (seg.name?.startsWith('2')) {
+      return Color('#ffbcbc');
+    }
+
+    if (seg.name?.startsWith('3')) {
+      return Color('#fffebc');
+    }
+
+    if (seg.name?.startsWith('4')) {
+      return Color('#a2fff6');
+    }
+
+    return Color('#e2e2e2');
+  }, [seg.name]);
 
   const { name } = seg;
 
@@ -108,7 +125,16 @@ function TimelineSeg({
 
   if (seg.end == null) {
     return (
-      <Marker seg={seg} segNum={segNum} color={segColor} selected={selected} isActive={isActive} onClick={onThisSegClick} getTimePercent={getTimePercent} formatTimecode={formatTimecode} />
+      <Marker
+        seg={seg}
+        segNum={segNum}
+        color={segColor}
+        selected={selected}
+        isActive={isActive}
+        onClick={onThisSegClick}
+        getTimePercent={getTimePercent}
+        formatTimecode={formatTimecode}
+      />
     );
   }
 
@@ -172,11 +198,11 @@ function TimelineSeg({
         )}
       </AnimatePresence>
 
-      {name && <div style={{ flexBasis: 4, flexShrink: 1 }} />}
+      {name && <div style={{ flexBasis: 4, flexShrink: 1 }}/>}
 
       {name && <div style={{ flexShrink: 1, fontSize: 11, minWidth: 0, overflow: 'hidden', whiteSpace: 'nowrap' }}>{name}</div>}
 
-      <div style={{ flexGrow: 1 }} />
+      <div style={{ flexGrow: 1 }}/>
     </motion.div>
   );
 }

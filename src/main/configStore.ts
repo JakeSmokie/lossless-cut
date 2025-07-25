@@ -84,6 +84,9 @@ const defaultKeyBindings: KeyBinding[] = [
   { keys: 'enter', action: 'labelCurrentSegment' },
   { keys: '1', action: 'labelCurrentSegment_set1' },
   { keys: '2', action: 'labelCurrentSegment_set2' },
+  { keys: '3', action: 'labelCurrentSegment_set3' },
+  { keys: '4', action: 'labelCurrentSegment_set4' },
+
 
   { keys: 'e', action: 'export' },
   { keys: 'shift+/', action: 'toggleKeyboardShortcuts' },

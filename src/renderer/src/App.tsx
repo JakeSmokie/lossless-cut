@@ -2066,6 +2066,8 @@ function App() {
       labelCurrentSegment: () => { labelSegment(currentSegIndexSafe, undefined); return false; },
       labelCurrentSegment_set1: () => { labelSegment(currentSegIndexSafe, '1'); return false; },
       labelCurrentSegment_set2: () => { labelSegment(currentSegIndexSafe, '2'); return false; },
+      labelCurrentSegment_set3: () => { labelSegment(currentSegIndexSafe, '3'); return false; },
+      labelCurrentSegment_set4: () => { labelSegment(currentSegIndexSafe, '4'); return false; },
       addSegment,
       duplicateCurrentSegment,
       toggleLastCommands: () => { toggleLastCommands(); return false; },
