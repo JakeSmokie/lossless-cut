@@ -86,6 +86,10 @@ const defaultKeyBindings: KeyBinding[] = [
   { keys: '2', action: 'labelCurrentSegment_set2' },
   { keys: '3', action: 'labelCurrentSegment_set3' },
   { keys: '4', action: 'labelCurrentSegment_set4' },
+  { keys: '5', action: 'labelCurrentSegment_set5' },
+  { keys: '6', action: 'labelCurrentSegment_set6' },
+  { keys: '7', action: 'labelCurrentSegment_set7' },
+  { keys: '8', action: 'labelCurrentSegment_set8' },
 
 
   { keys: 'e', action: 'export' },

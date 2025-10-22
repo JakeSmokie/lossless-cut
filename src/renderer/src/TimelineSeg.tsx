@@ -100,6 +100,15 @@ function TimelineSeg({
       return Color('#a2fff6');
     }
 
+    // from 5 to 8 please
+    if (seg.name?.startsWith('5')) {
+      return Color('#d5ffb3');
+    }
+
+    if (seg.name?.startsWith('6')) {
+      return Color('#ffd9b3');
+    }
+
     return Color('#e2e2e2');
   }, [seg.name]);
 
